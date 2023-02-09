@@ -1,0 +1,16 @@
+Package: fhswf
+Title: FH SWF Package
+Version: 0.0.1
+Authors@R: 
+    person("Stefan", "Böcker", , "boecker.stefan@fh-swf.de", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-8714-6261"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Imports: 
+    tibble
