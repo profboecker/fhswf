@@ -13,7 +13,41 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Imports: 
-    tibble
+    bookdown,
+    broom,
+    car,
+    dplyr,
+    equatiomatic,
+    feasts,
+    fGarch,
+    fma,
+    fpp3,
+    GGally,
+    gganimate,
+    ggforce,
+    ggplot2,
+    glmnet,
+    gridExtra,
+    iterators,
+    kableExtra,
+    knitr,
+    latex2exp,
+    magick,
+    markdown,
+    olsrr,
+    orcutt,
+    patchwork,
+    purrr,
+    reticulate,
+    rlang,
+    rmarkdown,
+    sandwich,
+    stargazer,
+    sugrrants,
+    texreg,
+    tibble,
+    tinytex,
+    USgas
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
