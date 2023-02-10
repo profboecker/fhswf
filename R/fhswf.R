@@ -124,8 +124,8 @@ presentation <- function(toc = FALSE,
 }
 
 
-#' @rdname presentation
-#' @export
+##' @rdname presentation
+##' @export
 seminarpaper <- function(...) {
   template <- system.file("rmarkdown/templates/fhswf-seminarpaper/resources/fhswf-seminarpaper.tex",
                           package="fhswf")
