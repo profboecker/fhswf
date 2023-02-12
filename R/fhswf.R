@@ -47,8 +47,8 @@
 ##'
 ##' @author Dirk Eddelbuettel
 ##'
-#' @rdname presentation
-#' @export
+##' @rdname presentation
+##' @export
 presentation <- function(toc = FALSE,
                    slide_level = 2,
                    incremental = FALSE,
@@ -117,8 +117,14 @@ presentation <- function(toc = FALSE,
 
 }
 
-#' @rdname seminarpaper
-#' @export
+
+##' @title Seminar Paper PDF Themes
+##' @seealso Three other packages also offer RMarkdown interfaces to LaTeX
+##' (or HTML) content: \code{\link[tint]{tint}} for Tufte-style pdf and html,
+##' @author Stefan Böcker
+##'
+##' @rdname seminarpaper
+##' @export
 seminarpaper <- function(...) {
   template <- system.file("rmarkdown/templates/fhswf-seminarpaper/resources/fhswf-seminarpaper.tex",
                           package="fhswf")

@@ -5,6 +5,8 @@ date: \today
 toc: false
 output: fhswf::presentation
 knit: fhswf::render_presentation
+german: false # German Dummy Text
+lang: en-gb   # Text Language: en-gb, en-us, de-de
 ---
 
 ```{r setup, include=FALSE}
