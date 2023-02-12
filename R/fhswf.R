@@ -47,14 +47,8 @@
 ##'
 ##' @author Dirk Eddelbuettel
 ##'
-##' @examples
-##' \dontrun{
-##' library(rmarkdown)
-##' draft("myslides.Rmd", template="metropolis", package="binb", edit=FALSE)
-##' setwd("myslides")       ## template creates a new subdir
-##' render("myslides.Rmd")
-##' }
-##' @export
+#' @rdname presentation
+#' @export
 presentation <- function(toc = FALSE,
                    slide_level = 2,
                    incremental = FALSE,
@@ -123,9 +117,8 @@ presentation <- function(toc = FALSE,
 
 }
 
-
-##' @rdname presentation
-##' @export
+#' @rdname seminarpaper
+#' @export
 seminarpaper <- function(...) {
   template <- system.file("rmarkdown/templates/fhswf-seminarpaper/resources/fhswf-seminarpaper.tex",
                           package="fhswf")

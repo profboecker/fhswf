@@ -2,7 +2,6 @@
 % Please edit documentation in R/fhswf.R, R/fhswf_hooks.R, R/render.R
 \name{presentation}
 \alias{presentation}
-\alias{seminarpaper}
 \alias{fhswf_hooks}
 \alias{render_presentation}
 \title{Binb is not Beamer - PDF Presentation Themes}
@@ -27,8 +26,6 @@ presentation(
   md_extensions = NULL,
   pandoc_args = NULL
 )
-
-seminarpaper(...)
 
 fhswf_hooks()
 
@@ -97,14 +94,6 @@ use one and two hash marks, new slides use three, and \dQuote{box} environments
 start with four. More commonly, Beamer theme use two and work without subsections.
 }
 
-\examples{
-\dontrun{
-library(rmarkdown)
-draft("myslides.Rmd", template="metropolis", package="binb", edit=FALSE)
-setwd("myslides")       ## template creates a new subdir
-render("myslides.Rmd")
-}
-}
 \seealso{
 Three other packages also offer RMarkdown interfaces to LaTeX
 (or HTML) content: \code{\link[tint]{tint}} for Tufte-style pdf and html,

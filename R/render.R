@@ -13,7 +13,7 @@ render_seminarpaper <- function(...){
 
   rmarkdown::render(...)
 
-  files <- c(files,list.files(patter="\\.log"), list.files(patter="\\.tex"))
+  files <- c(files,list.files(pattern="\\.log"), list.files(pattern="\\.tex"))
   for (f in files)
     unlink(f, recursive = FALSE, force = FALSE)
 
@@ -36,7 +36,7 @@ render_presentation <- function(...){
 
   rmarkdown::render(...)
 
-  files <- c(files,list.files(patter="\\.log"), list.files(patter="\\.tex"), list.files(patter="\\.sty"))
+  files <- c(files,list.files(pattern="\\.log"), list.files(pattern="\\.tex"), list.files(pattern="\\.sty"))
   for (f in files)
     unlink(f, recursive = FALSE, force = FALSE)
 
