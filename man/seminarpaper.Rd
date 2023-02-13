@@ -9,6 +9,9 @@ seminarpaper(...)
 
 render_seminarpaper(...)
 }
+\arguments{
+\item{...}{divers parameters}
+}
 \description{
 Seminar Paper PDF Themes
 }

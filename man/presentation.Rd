@@ -69,6 +69,8 @@ render_presentation(...)
 \item{md_extensions}{An optional character variable defaulting to \code{NULL}.}
 
 \item{pandoc_args}{An optional character variable defaulting to \code{NULL}.}
+
+\item{...}{diverse other parameters}
 }
 \value{
 RMarkdown content processed is returned for use by the

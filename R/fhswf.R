@@ -30,6 +30,7 @@
 ##' @param includes An optional character variable defaulting to \code{NULL}.
 ##' @param md_extensions An optional character variable defaulting to \code{NULL}.
 ##' @param pandoc_args An optional character variable defaulting to \code{NULL}.
+##' @param ... diverse other parameters
 ##'
 ##' @section IQSS Details: We currently set \code{slide_level} to three to use
 ##' the same appearance as the LaTeX demo. This means section and sub-section headers
@@ -123,6 +124,7 @@ presentation <- function(toc = FALSE,
 ##' (or HTML) content: \code{\link[tint]{tint}} for Tufte-style pdf and html,
 ##' @author Stefan Böcker
 ##'
+##' @param ... divers parameters
 ##' @rdname seminarpaper
 ##' @export
 seminarpaper <- function(...) {

@@ -1,3 +1,7 @@
+#' Install fhswf package
+#'
+#' `install_fhswf()` installs required tinytex packages
+#'
 #' @export
 install_fhswf <- function(){
   #
@@ -19,7 +23,10 @@ install_fhswf <- function(){
   tinytex::tlmgr_install(pkgs = pkgs)
 }
 
-
+#' Update fhswf package
+#'
+#' `update_fhswf()` updates fhswf package
+#'
 #' @export
 update_fhswf <- function(){
   message("Updating the fhswf package...\n")
