@@ -125,17 +125,17 @@ print(random(), random(), random())
 
 This templates comes with some frequently used references.
 
-@StudienbuchStatistik
+@linux-server
 
-@FoliensatzStatistik
+@kofler-linux
 
 References can be cited in three different ways.
 
-@Fahrmeir2016
+@ubuntu-server18
 
-@Fahrmeir2016[p. 1058]
+@ubuntu-server18[p. 1058]
 
-[@Fahrmeir2016, p. 1058]
+[@ubuntu-server18, p. 1058]
 
 ## Managing References
 
