@@ -1,5 +1,5 @@
 # fhswf
-Package for FH SWF.
+R-Package for FH SWF.
 
 Usable for the following module:
 - Statistics (Prof. Dr. Böcker)
