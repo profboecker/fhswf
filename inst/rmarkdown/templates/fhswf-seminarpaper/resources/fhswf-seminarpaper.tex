@@ -26,6 +26,7 @@ $if(euro)$
   \usepackage{eurosym}
 $endif$
 \else % if luatex or xelatex
+\usepackage{fontspec}
 $if(mathspec)$
   \ifxetex
     \usepackage{mathspec}

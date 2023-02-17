@@ -3,7 +3,7 @@ title: "Machine Learning"
 abstract: "A brief summary of our ideas."
 keywords: "Data Science, Machine Learning, Statistics, Regression, Forecasting"
 
-course: Machine Learning (Prof. Dr. Andreas de Vries & Prof. Dr. Stefan Böcker)
+course: Machine Learning (Master Informatics and Business )
 supervisor: Prof. Dr. Andreas de Vries & Prof. Dr. Stefan Böcker
 city: Hagen, Germany
 
@@ -50,6 +50,7 @@ knit: fhswf::render_seminarpaper
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE, 
                       attr.source='.numberLines', singlespacing = TRUE)
+# Execute fhswf hooks
 fhswf::fhswf_hooks()
 
 # Load Packages
