@@ -9,9 +9,16 @@ $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
 
+\usepackage{}
 \usepackage{amssymb,amsmath}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage[sfdefault]{FiraSans}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\RequirePackage{setspace}
+
 
 \usepackage{enumitem}
 \newlist{todolist}{itemize}{2}
@@ -226,6 +233,16 @@ $if(institute)$
 $endif$
 
 %% MONASH STUFF
+
+%% SPACING
+\newcommand{\codespacing}{\spacing{1}}
+\newcommand{\textspacing}{\spacing{1.25}}
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\partopsep=-5pt}
+\makeatother
+\setlist[itemize]{topsep=0pt, parsep=5pt}
+
 
 %% CAPTIONS
 \RequirePackage{caption}
@@ -509,16 +526,6 @@ $endif$
 \let\maketitle\titlepage
 \makeatother
 
-%% SPACING
-\RequirePackage{setspace}
-\newcommand{\codespacing}{\spacing{1}}
-\newcommand{\textspacing}{\spacing{1.25}}
-\usepackage{etoolbox}
-\makeatletter
-\preto{\@verbatim}{\partopsep=-5pt}
-\makeatother
-\setlist[itemize]{topsep=0pt, parsep=5pt}
-
 \textspacing
 %\spacing{1.5}
 
@@ -559,9 +566,6 @@ $endif$
 \hrule\vspace{0.1cm}\par{\sffamily\textbf{\abstractname}}\newline}
   {\end{minipage}}
 
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 
 \usepackage[showonlyrefs]{mathtools}
 \usepackage[no-weekday]{eukdate}
