@@ -69,8 +69,8 @@ presentation <- function(toc = FALSE,
                    md_extensions = NULL,
                    pandoc_args = NULL) {
 
-  fcolortheme <- paste0("beamercolortheme",colortheme,".sty")
-  for (f in c("beamerfontthemefhswf.sty",fcolortheme,
+  fcolortheme <- paste0("beamercolortheme", colortheme, ".sty")
+  for (f in c("beamerfontthemefhswf.sty", fcolortheme,
               "beamerthemefhswf.sty", "titlepage.pdf", "figs/"))
     if (!file.exists(f))
       file.copy(system.file("rmarkdown", "templates", "fhswf-presentation",
