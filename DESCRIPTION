@@ -1,6 +1,6 @@
 Package: fhswf
 Title: FH SWF Package
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: 
     person("Stefan", "Böcker", , "boecker.stefan@fh-swf.de", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-8714-6261"))

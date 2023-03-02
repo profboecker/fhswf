@@ -5,10 +5,12 @@ render_seminarpaper <- function(...){
   # Dateinamen aus der Vorlage sammeln
   files <- c("WirGebenImpulse.pdf",
              "FHSWF.pdf")
+  template_name <- "fhswf-seminarpaper"
+  
   # .. und Vorlagendateien in das Arbeitsverzeichnis kopieren
   for (f in files)
     if (!file.exists(f))
-      file.copy(system.file("rmarkdown", "templates", "fhswf-seminarpaper", "skeleton",
+      file.copy(system.file("rmarkdown", "templates", template_name, "skeleton",
                             f, package="fhswf"),
                 ".", recursive=TRUE)
 
@@ -22,6 +24,8 @@ render_seminarpaper <- function(...){
 
 }
 
+
+
 #' @rdname presentation
 #' @export
 render_presentation <- function(...){
@@ -29,11 +33,12 @@ render_presentation <- function(...){
   # Dateinamen aus der Vorlage sammeln
   files <- c("WirGebenImpulse.pdf",
              "FHSWF.pdf", "titlepage.pdf")
-
+  template_name <- "fhswf-presentation"
+  
   # .. und Vorlagendateien in das Arbeitsverzeichnis kopieren
   for (f in files)
     if (!file.exists(f))
-      file.copy(system.file("rmarkdown", "templates", "fhswf-presentation", "skeleton",
+      file.copy(system.file("rmarkdown", "templates", template_name, "skeleton",
                             f, package="fhswf"),
                 ".", recursive=TRUE)
 

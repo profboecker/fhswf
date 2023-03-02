@@ -109,7 +109,6 @@ presentation <- function(toc = FALSE,
     if (before) {
       return(paste0("\n \\", options$size, "\n\n"))
     }else{
-      #return(paste0("\n \\", knitr::opts_chunk$get()$size, "\n\n"))
       return("\n\n \\normalsize \n")
     }
   }
