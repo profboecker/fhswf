@@ -23,6 +23,7 @@ install_fhswf <- function(){
   tinytex::tlmgr_install(pkgs = pkgs)
 }
 
+
 #' Update fhswf package
 #'
 #' `update_fhswf()` updates fhswf package
