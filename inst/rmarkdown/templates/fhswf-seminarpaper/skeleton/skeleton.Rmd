@@ -132,11 +132,11 @@ This templates comes with some frequently used references.
 
 References can be cited in three different ways.
 
-@ubuntu-server18
+@RManual
 
-@ubuntu-server18[p. 1058]
+@RManual[p. 1058]
 
-[@ubuntu-server18, p. 1058]
+[@RManual, p. 1058]
 
 ## Managing References
 
