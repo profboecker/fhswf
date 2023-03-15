@@ -1,6 +1,6 @@
 Package: fhswf
 Title: FH SWF Package
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: 
     person("Stefan", "Böcker", , "boecker.stefan@fh-swf.de", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-8714-6261"))
@@ -19,5 +19,8 @@ Imports:
   tibble,
   remotes
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tint,
+    pinp,
+    linl
 Config/testthat/edition: 3
