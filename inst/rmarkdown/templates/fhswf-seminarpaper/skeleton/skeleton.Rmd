@@ -4,7 +4,7 @@ abstract: "A brief summary of our ideas."
 keywords: "Data Science, Machine Learning, Statistics, Regression, Forecasting"
 
 course: Machine Learning (Master Informatics and Business )
-supervisor: Prof. Dr. Andreas de Vries & Prof. Dr. Stefan Böcker
+supervisor: Prof. Dr. Stefan Böcker, FRM
 city: Hagen, Germany
 
 # List of Authors

@@ -1,6 +1,6 @@
 ---
 title: FHSWF Beamer Class Demonstration
-author: Stefan Böcker
+author: Prof. Dr. Stefan Böcker, FRM
 date: \today
 toc: false
 output: fhswf::presentation
