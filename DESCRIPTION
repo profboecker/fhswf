@@ -1,6 +1,6 @@
 Package: fhswf
 Title: FH SWF Package
-Version: 0.1.7
+Version: 0.1.8
 Authors@R: 
     person("Stefan", "Böcker", , "boecker.stefan@fh-swf.de", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-8714-6261"))
@@ -8,7 +8,7 @@ Description: Package for FH SWF (Fachhochschule Südwestfalen), including data, 
 License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Depends: 
     R (>= 2.10)
 Imports: 
