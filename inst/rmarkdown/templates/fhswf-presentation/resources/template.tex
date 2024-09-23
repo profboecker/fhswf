@@ -37,6 +37,9 @@ $for(fontfamilies)$
   \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
 $endfor$
 
+% fix issue with this function
+\newcommand{\theHtable}{\thetable}
+
 $if(euro)$
   \newcommand{\euro}{€}
 $endif$
