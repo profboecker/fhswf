@@ -9,16 +9,9 @@ $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
 
-\usepackage{}
 \usepackage{amssymb,amsmath}
 \usepackage{tikz}
 \usepackage{float}
-\usepackage[sfdefault]{FiraSans}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\RequirePackage{setspace}
-
 
 \usepackage{enumitem}
 \newlist{todolist}{itemize}{2}
@@ -33,7 +26,6 @@ $if(euro)$
   \usepackage{eurosym}
 $endif$
 \else % if luatex or xelatex
-\usepackage{fontspec}
 $if(mathspec)$
   \ifxetex
     \usepackage{mathspec}
@@ -127,7 +119,6 @@ $if(babel-newcommands)$
 $endif$
 \else
   \usepackage{polyglossia}
-  \usepackage{csquotes}
   \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
 $for(polyglossia-otherlangs)$
   \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
@@ -234,16 +225,6 @@ $endif$
 
 %% MONASH STUFF
 
-%% SPACING
-\newcommand{\codespacing}{\spacing{1}}
-\newcommand{\textspacing}{\spacing{1.25}}
-\usepackage{etoolbox}
-\makeatletter
-\preto{\@verbatim}{\partopsep=-5pt}
-\makeatother
-\setlist[itemize]{topsep=0pt, parsep=5pt}
-
-
 %% CAPTIONS
 \RequirePackage{caption}
 \DeclareCaptionStyle{italic}[justification=centering]
@@ -330,10 +311,10 @@ $endif$
         \begin{center}\Large
         $if(german)$
           Fachhochschule Südwestfalen\\
-          Fachbereich Technische Betriebswirtschaft\\[.5cm]
+          Fachbereich Ingenieur- und Wirtschaftswissenschaften\\[.5cm]
         $else$
           South Westphalia University\\
-          Department of Technical Business Economics\\[.5cm]
+          Department of Engineering and Economics\\[.5cm]
         $endif$
         %%
         $if(course)$ $course$ \\ $endif$
@@ -526,6 +507,16 @@ $endif$
 \let\maketitle\titlepage
 \makeatother
 
+%% SPACING
+\RequirePackage{setspace}
+\newcommand{\codespacing}{\singlespacing}
+\newcommand{\textspacing}{\onehalfspacing}
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\partopsep=-5pt}
+\makeatother
+\setlist[itemize]{topsep=0pt, parsep=5pt}
+
 \textspacing
 %\spacing{1.5}
 
@@ -558,6 +549,25 @@ $endif$
      citecolor=darkblue,
      colorlinks=true}
 
+%% PANDOC
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+$endif$
+
 %% KEYWORDS
 \newenvironment{keywords}{\par\vspace{0.5cm}\noindent{\sffamily\textbf{Keywords:}}}{\vspace{0.25cm}\par\hrule\vspace{0.5cm}\par}
 
@@ -566,6 +576,8 @@ $endif$
 \hrule\vspace{0.1cm}\par{\sffamily\textbf{\abstractname}}\newline}
   {\end{minipage}}
 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 \usepackage[showonlyrefs]{mathtools}
 \usepackage[no-weekday]{eukdate}
