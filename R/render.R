@@ -51,3 +51,31 @@ render_presentation <- function(...){
     unlink(f, recursive = FALSE, force = FALSE)
 
 }
+
+
+
+#' @rdname exercises
+#' @export
+render_exercises <- function(...){
+  
+  # Dateinamen aus der Vorlage sammeln
+  files <- c("WirGebenImpulse.pdf",
+             "FHSWF.pdf")
+  template_name <- "fhswf-exercises"
+  
+  # .. und Vorlagendateien in das Arbeitsverzeichnis kopieren
+  for (f in files)
+    if (!file.exists(f))
+      file.copy(system.file("rmarkdown", "templates", template_name, "skeleton",
+                            f, package="fhswf"),
+                ".", recursive=TRUE)
+  
+  # render using rmarkdown
+  rmarkdown::render(...)
+  
+  # remove unnecessary files
+  files <- c(files,list.files(pattern="\\.log"), list.files(pattern="\\.tex"))
+  for (f in files)
+    unlink(f, recursive = FALSE, force = FALSE)
+  
+}

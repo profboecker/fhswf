@@ -142,6 +142,34 @@ inherit_pdf_document <- function(...) {
   fmt
 }
 
+
+##' @title Exercise Sheets PDF Themes
+##' @seealso Three other packages also offer RMarkdown interfaces to LaTeX
+##' (or HTML) content: \code{\link[tint]{tint}} for Tufte-style pdf and html,
+##' @author Stefan Böcker
+##'
+##' @param ... divers parameters
+##' @rdname exercises
+##' @export
+exercises <- function(...) {
+  template <- system.file("rmarkdown/templates/fhswf-exercises/resources/fhswf-exercises.tex",
+                          package="fhswf")
+  bookdown::pdf_document2(...,
+                          template = template
+  )
+}
+
+
+# Call rmarkdown::pdf_document and mark the return value as inheriting pdf_document
+inherit_pdf_document <- function(...) {
+  fmt <- rmarkdown::pdf_document(...)
+  fmt$inherits <- "pdf_document"
+  fmt
+}
+
+
+
+
 knitr_fun <- function(name) utils::getFromNamespace(name, 'knitr')
 
 output_asis <- knitr_fun('output_asis')
