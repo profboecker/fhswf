@@ -46,14 +46,14 @@ render_presentation <- function(...){
   rmarkdown::render(...)
 
   # remove unnecessary files
+  files <- c("WirGebenImpulse.pdf",
+             "FHSWF.pdf", "titlepage.pdf")
   files <- c(files, 
              list.files(pattern="\\.log"), 
              list.files(pattern="\\.tex"), 
              list.files(pattern="\\.sty"), 
              list.files(pattern="\\_cache"), 
-             list.files(pattern="\\_files"), 
-             list.files(pattern="titlepage.pdf"))
-  # files <- c(files,list.files(pattern="\\.log"), list.files(pattern="\\.tex"))
+             list.files(pattern="\\_files"))
   for (f in files)
     unlink(f, recursive = FALSE, force = FALSE)
 
