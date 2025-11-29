@@ -151,6 +151,17 @@ $if(tables)$
 \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
 $endif$
 
+%% Schriften
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Bonum}
+\setsansfont{TeX Gyre Heros}[Scale=MatchUppercase]
+\setmonofont{Source Code Pro}[Scale=MatchLowercase,FakeStretch=0.85]
+\setmathfont{TeX Gyre Pagella Math}
+%% Schriften:ENDE
+
+
+
 $if(graphics)$
 \usepackage{graphicx,grffile}
 \makeatletter
