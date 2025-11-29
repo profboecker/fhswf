@@ -353,6 +353,8 @@ $endif$
                 $city$\linebreak
                 \today
         \end{center}\vspace*{0.5cm}}}
+
+$if(declaration)$
 \def\pageone{{\sffamily\setstretch{1}%
         \thispagestyle{empty}%
         \vbox to \textheight{%
@@ -384,9 +386,6 @@ $endif$
      \thispagestyle{plain}\raggedright\baselineskip=1.2cm
      {\fontsize{24.88}{30}\sffamily\textbf{\expandafter{\@title}}}\vspace{1cm}\par
         }}
-
-$if(declaration)$
-\def\titlepage{{\cover\newpage\pageone\newpage\pagetwo}}
 $endif$
 
 
