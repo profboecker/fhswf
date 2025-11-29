@@ -35,6 +35,7 @@ bibliography: references.bib
 biblio-style: authoryear-comp
 blind: false
 cover: true
+declaration: true
 checklist: true
 output:
   fhswf::seminarpaper:
