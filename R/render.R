@@ -55,7 +55,7 @@ render_presentation <- function(...){
              list.files(pattern="\\_cache"), 
              list.files(pattern="\\_files"))
   for (f in files)
-    unlink(f, recursive = FALSE, force = FALSE)
+    unlink(f, recursive = TRUE, force = FALSE)
 
 }
 
