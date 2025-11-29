@@ -19,7 +19,7 @@ render_seminarpaper <- function(...){
 
   # remove unnecessary files
   files <- c("WirGebenImpulse.pdf",
-             "FHSWF.pdf", "titlepage.pdf")
+             "FHSWF.pdf")
   files <- c(files,list.files(pattern="\\.log"), list.files(pattern="\\.tex"))
   for (f in files)
     unlink(f, recursive = TRUE, force = FALSE)
