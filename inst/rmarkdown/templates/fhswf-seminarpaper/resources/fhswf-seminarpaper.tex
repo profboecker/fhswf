@@ -354,7 +354,6 @@ $endif$
                 \today
         \end{center}\vspace*{0.5cm}}}
 
-$if(declaration)$
 \def\pageone{{\sffamily\setstretch{1}%
         \thispagestyle{empty}%
         \vbox to \textheight{%
@@ -381,7 +380,6 @@ $if(declaration)$
           \footnotesize \center This Declaration must be signed by all listed Authors to be valid.
         $endif$
             }}}
-$endif$
 
 \def\blindtitle{{\sffamily
      \thispagestyle{plain}\raggedright\baselineskip=1.2cm
@@ -500,7 +498,12 @@ $endif$
   }}}
 
 %\def\titlepage{{\cover\newpage\pageone\newpage\blindtitle}}
+\def\titlepage{{\cover}}
+
+$if(declaration)$
 \def\titlepage{{\cover\newpage\pageone}}
+$endif$
+
 
 $if(checklist)$
 \def\titlepage{{\cover\newpage\pageone\newpage\pagetwo}}
