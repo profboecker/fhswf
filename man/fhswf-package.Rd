@@ -11,5 +11,10 @@ Package for FH SWF (Fachhochschule Südwestfalen), including data, templates and
 \author{
 \strong{Maintainer}: Stefan Böcker \email{boecker.stefan@fh-swf.de} (\href{https://orcid.org/0000-0001-8714-6261}{ORCID})
 
+Authors:
+\itemize{
+  \item Stefan Böcker \email{boecker.stefan@fh-swf.de} (\href{https://orcid.org/0000-0001-8714-6261}{ORCID})
+}
+
 }
 \keyword{internal}
