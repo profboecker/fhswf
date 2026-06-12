@@ -4,7 +4,6 @@
 #'
 #' @export
 install_fhswf <- function(){
-  #
   tinytex::tlmgr_update()
 
   pkgs <- c("caption", "xpatch", "csquotes", "verbatimbox", "float","enumitem",
@@ -17,7 +16,6 @@ install_fhswf <- function(){
 
   # pkgs <- c(pkgs, "ifdraft") # Package not present in any (?) TexLive Repo
 
-  pkgs <- pkgs[!duplicated(pkgs)]
   pkgs <- sort(pkgs)
 
   tinytex::tlmgr_install(pkgs = pkgs)

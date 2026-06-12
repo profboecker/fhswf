@@ -104,16 +104,11 @@ presentation <- function(toc = FALSE,
 
 
   # Based on: https://stackoverflow.com/questions/25646333/code-chunk-font-size-in-rmarkdown-with-knitr-and-latex
-
-  fmt$knitr$knit_hooks$size = function(before, options, envir) {
-    if (before) {
-      return(paste0("\n \\", options$size, "\n\n"))
-    }else{
-      return("\n\n \\normalsize \n")
-    }
+  fmt$knitr$knit_hooks$size <- function(before, options, envir) {
+    if (before) paste0("\n \\", options$size, "\n\n") else "\n\n \\normalsize \n"
   }
 
-  return(fmt)
+  fmt
 
 }
 
@@ -135,14 +130,6 @@ seminarpaper <- function(...) {
 }
 
 
-# Call rmarkdown::pdf_document and mark the return value as inheriting pdf_document
-inherit_pdf_document <- function(...) {
-  fmt <- rmarkdown::pdf_document(...)
-  fmt$inherits <- "pdf_document"
-  fmt
-}
-
-
 ##' @title Exercise Sheets PDF Themes
 ##' @seealso Three other packages also offer RMarkdown interfaces to LaTeX
 ##' (or HTML) content: \code{\link[tint]{tint}} for Tufte-style pdf and html,
@@ -158,16 +145,6 @@ exercises <- function(...) {
                           template = template
   )
 }
-
-
-# Call rmarkdown::pdf_document and mark the return value as inheriting pdf_document
-inherit_pdf_document <- function(...) {
-  fmt <- rmarkdown::pdf_document(...)
-  fmt$inherits <- "pdf_document"
-  fmt
-}
-
-
 
 
 knitr_fun <- function(name) utils::getFromNamespace(name, 'knitr')
