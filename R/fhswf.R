@@ -147,6 +147,3 @@ exercises <- function(...) {
 }
 
 
-knitr_fun <- function(name) utils::getFromNamespace(name, 'knitr')
-
-output_asis <- knitr_fun('output_asis')
