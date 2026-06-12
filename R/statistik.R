@@ -7,5 +7,6 @@
 sd_pop <- function(x, na.rm = FALSE) {
   if (na.rm) x <- x[!is.na(x)]
   n <- length(x)
+  if (n <= 1) return(0)
   sd(x) * sqrt((n - 1) / n)
 }

@@ -21,10 +21,18 @@ test_that("sd_pop mit na.rm=FALSE gibt NA zurück wenn NAs vorhanden", {
   expect_true(is.na(sd_pop(c(1, 2, NA))))
 })
 
-test_that("sd_pop eines einzelnen Wertes gibt 0 zurück", {
+test_that("sd_pop gibt korrekten Wert für einfachen Vektor zurück", {
   expect_equal(sd_pop(c(42, 43)), 0.5)
 })
 
 test_that("sd_pop eines konstanten Vektors gibt 0 zurück", {
   expect_equal(sd_pop(c(3, 3, 3, 3)), 0)
+})
+
+test_that("sd_pop eines einzelnen Wertes gibt 0 zurück", {
+  expect_equal(sd_pop(c(42)), 0)
+})
+
+test_that("sd_pop gibt 0 zurück wenn nach na.rm nur ein Wert übrig bleibt", {
+  expect_equal(sd_pop(c(42, NA, NA), na.rm = TRUE), 0)
 })
