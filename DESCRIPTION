@@ -1,21 +1,20 @@
 Package: fhswf
 Title: FH SWF Package
-Version: 2026.06.13.01
-Authors@R: 
+Version: 2026.06.18.01
+Authors@R:
     person("Stefan", "Böcker", , "boecker.stefan@fh-swf.de", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-8714-6261"))
-Author: Prof. Dr. Stefan Böcker
-Maintainer: Stefan Böcker <boecker.stefan@fh-swf.de>
 Description: Package for FH SWF (Fachhochschule Südwestfalen), including data, templates and examples, mainly for statistics, machine learning, maths modules.
 License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 2.10)
-Imports: 
-  bookdown, 
+Imports:
+  bookdown,
   knitr,
   rmarkdown,
+  stats,
   tinytex,
   tibble,
   remotes
