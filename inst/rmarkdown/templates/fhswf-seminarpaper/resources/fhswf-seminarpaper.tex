@@ -454,7 +454,7 @@ $endif$
 
 % --- EHRENWÖRTLICHE ERKLARUNG (\pageone) -----------------------
 % Fliesstext der Erklärung direkt in den Textblöcken unten bearbeiten.
-% DE-Text: $if(german)$-Block,  EN-Text: $else$-Block.
+% DE-Text: $$if(german)$$-Block,  EN-Text: $$else$$-Block.
 % YAML city: erscheint in der Datumszeile.
 % Wird eingebunden bei: YAML declaration: true  (oder checklist: true)
 \def\pageone{{\sffamily\setstretch{1}%
@@ -494,7 +494,7 @@ $endif$
 % Checklistenpunkte in den \begin{todolist}...\end{todolist}-Bloecken bearbeiten.
 % Neuer Punkt: \item Text  (innerhalb des passenden todolist-Blocks).
 % Neuer Abschnitt: todolist-Block mit \textbf{...}-Header kopieren.
-% DE-Text: $if(german)$-Block,  EN-Text: $else$-Block.
+% DE-Text: $$if(german)$$-Block,  EN-Text: $$else$$-Block.
 % Wird eingebunden bei: YAML checklist: true
 \def\pagetwo{{\sffamily\setstretch{0.8}%
   \thispagestyle{empty}%
