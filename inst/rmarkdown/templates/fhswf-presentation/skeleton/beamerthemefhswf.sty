@@ -1,3 +1,18 @@
+%% =============================================================
+%% beamerthemefhswf.sty
+%% FHSWF Beamer-Theme (Metropolis-Basis)
+%%
+%% Anpassungen schnell finden:
+%%   Farbthema ........... beamercolorthemefhswfblue.sty  (YAML: colortheme: fhswfblue)
+%%                          beamercolorthemefhswfwhite.sty (YAML: colortheme: fhswfwhite)
+%%   Schriftthema ........ beamerfontthemefhswf.sty
+%%   Fortschrittsbalken .. \metroset{progressbar=foot}
+%%   Folienraender ....... \setbeamersize{text margin left=2em, ...}
+%%   Aufzaehlungssymbole . \setbeamertemplate{items}[...]
+%%   Kariertes Papier .... \kariert{zeilen}[groesse]  bzw.  \squared{zeilen}
+%%   Liniertes Papier .... \liniert{zeilen}[abstand]  bzw.  \lined{zeilen}
+%% =============================================================
+
 %% This is the FHSWF beamer theme
 %% Created for South Westphalia University
 %% Based on the Monash beamer theme by Rob J Hyndman
@@ -80,7 +95,14 @@
 
 % FHSWF Additions: Squared and Lined Paper
 % https://texwelt.de/fragen/2639/wie-kann-ich-kastchenpapier-zeichnen
-
+%
+% \kariert{zeilen}[zellengroesse=0.4cm]  — kariertes Papier
+%   Alias: \squared{zeilen}
+%   Beispiel: \kariert{10}  oder  \kariert[0.5cm]{8}
+%
+% \liniert{zeilen}[zeilenabstand=0.5cm]  — liniertes Papier
+%   Alias: \lined{zeilen}
+%   Beispiel: \liniert{14}  oder  \liniert[0.8cm]{6}
 \newcommand\kariert[2][0.4cm]{%
    \begin{tikzpicture}[gray,step=#1]
      \pgfmathtruncatemacro\anzahl{(\linewidth-\pgflinewidth)/#1} % maximale Anzahl Kästchen pro Zeile

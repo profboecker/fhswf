@@ -1,3 +1,20 @@
+%% =============================================================
+%% template.tex
+%% Pandoc/RMarkdown-Beamer-Template fuer FHSWF-Praesentationen
+%%
+%% Anpassungen schnell finden:
+%%   Farbthema .................. beamercolorthemefhswfblue.sty
+%%                                 beamercolorthemefhswfwhite.sty
+%%                                 (YAML: colortheme: fhswfblue|fhswfwhite)
+%%   Schriftthema ............... beamerfontthemefhswf.sty
+%%   Theme-Einstellungen ........ beamerthemefhswf.sty
+%%   Titelfolien-Hintergrund .... YAML: titlepage: <dateiname>
+%%   Titeltextfarbe ............. YAML: titlecolor: white
+%%   Titelschriftgroesse ........ YAML: titlefontsize: 24
+%%   TOC-Folien ................. Abschnitt: FHSWF OVERRIDES
+%%   Code-Block-Hintergrund ..... suche: shadecolor
+%% =============================================================
+
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[$if(fontsize)$$fontsize$,$else$10pt,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(colorlinks)$dvipsnames,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
@@ -18,7 +35,6 @@ $endif$
 \usepackage{cancel}
 \usepackage{tabularx}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
@@ -78,15 +94,6 @@ $if(fonttheme)$
   \usefonttheme{$fonttheme$}
 $endif$
 
-% $if(csl-refs)$
-% \newlength{\cslhangindent}
-% \setlength{\cslhangindent}{1.5em}
-% \newenvironment{CSLReferences}
-%   {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}
-%   \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
-%   {\par}
-% $endif$
-
 $if(csl-refs)$
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
@@ -118,6 +125,14 @@ $if(titlefontsize)$
   \setbeamerfont{title}{series=\bfseries,parent=structure,size=\fontsize{$titlefontsize$}{32}}
 $endif$
 
+% ---------------------------------------------------------------
+% TITELFOLIE
+% Hintergrundbild:      YAML titlepage: <dateiname>  (Standard: titlepage.pdf)
+% Textfarbe:            YAML titlecolor: white
+% Schriftgroesse Titel: YAML titlefontsize: 24  (Standard: 24, in beamerthemefhswf.sty)
+% Position Titeltext:   \begin{textblock}{7.5}(1,2.8) — (x,y) in cm aendern
+% Position Autor/Datum: \begin{textblock}{7.5}(1,7)   — (x,y) in cm aendern
+% ---------------------------------------------------------------
 % Title page
 \setbeamertemplate{title page}
 {\placefig{-0.01}{-0.01}{width=1.01\paperwidth,height=1.01\paperheight}{$if(titlepage)$$titlepage$$else$titlepage$endif$}
@@ -227,7 +242,7 @@ $if(tables)$
 $endif$
 
 $if(graphics)$
-  \usepackage{graphicx,grffile}
+  \usepackage{graphicx}
   \makeatletter
   \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
   \def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
@@ -319,7 +334,14 @@ $if(dir)$
   \fi
 $endif$
 
-%% FHSWF overrides
+%% FHSWF OVERRIDES
+% TOC-Folien: wenn YAML toc: true, wird vor jeder \section automatisch
+%   eine Inhaltsverzeichnis-Folie eingefuegt.
+%   Ueberschrift der TOC-Folie: YAML tocheader: "Gliederung"
+%   Kompaktes TOC (kleinere Schrift): YAML tighttoc: true
+%
+% Code-Block-Hintergrund: \definecolor{shadecolor}{RGB}{225,225,225}
+%   Farbe fuer R/Python-Code-Bloecke — RGB-Werte hier aendern.
 $if(toc)$
 \AtBeginSection[]{
    \frame<beamer>{
