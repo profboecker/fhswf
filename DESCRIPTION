@@ -25,3 +25,4 @@ Suggests:
     linl
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.0.0
+RoxygenNote: 8.0.0
