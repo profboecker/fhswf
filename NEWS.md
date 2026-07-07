@@ -1,10 +1,7 @@
-# fhswf (development version)
+# fhswf (2026.06.28.03)
 
-* Initial CRAN submission.
-This is the inital commit of the fhswf-package.
+## New features
 
-It offers templates for RMarkdown files to generate
-- seminarpapers
-- slides
-- exercises
-for lecture at the Fachhochschule Südwestfalen, Germany.
+- Erste Einreichung bei CRAN.
+- RMarkdown templates for use at the Fachhochschule Südwestfalen, Germany.
+
