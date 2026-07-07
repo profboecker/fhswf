@@ -1,7 +1,3 @@
-# fhswf (2026.06.28.03)
+# fhswf (development version)
 
-## New features
-
-- Erste Einreichung bei CRAN.
-- RMarkdown templates for use at the Fachhochschule Südwestfalen, Germany.
-
+* Initial CRAN submission.
