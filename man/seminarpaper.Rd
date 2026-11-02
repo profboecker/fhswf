@@ -5,12 +5,14 @@
 \alias{render_seminarpaper}
 \title{Seminar Paper PDF Themes}
 \usage{
-seminarpaper(...)
+seminarpaper(..., latex_engine = "lualatex")
 
 render_seminarpaper(...)
 }
 \arguments{
 \item{...}{divers parameters}
+
+\item{latex_engine}{A character variable defaulting to \dQuote{lualatex}.}
 }
 \description{
 Seminar Paper PDF Themes

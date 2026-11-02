@@ -24,7 +24,7 @@
 ##' @param colortheme For the \sQuote{Monash} theme only. A character variable defaulting to \dQuote{monashwhite}.
 ##' @param highlight A character variable defaulting to \dQuote{tango}.
 ##' @param keep_tex A logical variable defaulting to \code{FALSE}.
-##' @param latex_engine A character variable defaulting to \dQuote{xelatex}.
+##' @param latex_engine A character variable defaulting to \dQuote{lualatex}.
 ##' @param citation_package An optional character variable with possible value
 ##' \dQuote{default}, \dQuote{natbib} (the default), or \dQuote{biblatex}.
 ##' @param includes An optional character variable defaulting to \code{NULL}.
@@ -63,7 +63,7 @@ presentation <- function(toc = FALSE,
                    colortheme = "fhswfwhite",
                    highlight = "tango",
                    keep_tex = FALSE,
-                   latex_engine = "pdflatex",
+                   latex_engine = "lualatex",
                    citation_package = c("default", "natbib", "biblatex"),
                    includes = NULL,
                    md_extensions = NULL,
@@ -119,13 +119,15 @@ presentation <- function(toc = FALSE,
 ##' @author Stefan Böcker
 ##'
 ##' @param ... divers parameters
+##' @param latex_engine A character variable defaulting to \dQuote{lualatex}.
 ##' @rdname seminarpaper
 ##' @export
-seminarpaper <- function(...) {
+seminarpaper <- function(..., latex_engine = "lualatex") {
   template <- system.file("rmarkdown/templates/fhswf-seminarpaper/resources/fhswf-seminarpaper.tex",
                           package="fhswf")
   bookdown::pdf_document2(...,
-                          template = template
+                          template = template,
+                          latex_engine = latex_engine
   )
 }
 
@@ -136,13 +138,15 @@ seminarpaper <- function(...) {
 ##' @author Stefan Böcker
 ##'
 ##' @param ... divers parameters
+##' @param latex_engine A character variable defaulting to \dQuote{lualatex}.
 ##' @rdname exercises
 ##' @export
-exercises <- function(...) {
+exercises <- function(..., latex_engine = "lualatex") {
   template <- system.file("rmarkdown/templates/fhswf-exercises/resources/fhswf-exercises.tex",
                           package="fhswf")
   bookdown::pdf_document2(...,
-                          template = template
+                          template = template,
+                          latex_engine = latex_engine
   )
 }
 

@@ -20,7 +20,7 @@ presentation(
   colortheme = "fhswfwhite",
   highlight = "tango",
   keep_tex = FALSE,
-  latex_engine = "pdflatex",
+  latex_engine = "lualatex",
   citation_package = c("default", "natbib", "biblatex"),
   includes = NULL,
   md_extensions = NULL,
@@ -59,7 +59,7 @@ render_presentation(...)
 
 \item{keep_tex}{A logical variable defaulting to \code{FALSE}.}
 
-\item{latex_engine}{A character variable defaulting to \dQuote{xelatex}.}
+\item{latex_engine}{A character variable defaulting to \dQuote{lualatex}.}
 
 \item{citation_package}{An optional character variable with possible value
 \dQuote{default}, \dQuote{natbib} (the default), or \dQuote{biblatex}.}

@@ -175,19 +175,11 @@ $endif$
 % YAML german: true  → alle generierten Texte auf Deutsch
 % YAML german: false → Englisch (Standard)
 % ---------------------------------------------------------------
-$if(lang)$
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
+$if(babel-lang)$
+\usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
 $if(babel-newcommands)$
-  $babel-newcommands$
+$babel-newcommands$
 $endif$
-\else
-  \usepackage{polyglossia}
-  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
-$for(polyglossia-otherlangs)$
-  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
-$endfor$
-\fi
 $endif$
 $if(natbib)$
 \usepackage{natbib}
@@ -306,10 +298,32 @@ $endif$
 % Sans-Serif:          TeX Gyre Heros  (\RequirePackage{tgheros})
 % Monospace (Code):    Bera Mono       (\RequirePackage{beramono})
 % Serifen / Mathematik: Palatino       (\RequirePackage{mathpazo})
-% Aendern: die RequirePackage-Zeilen durch gewuenschte Pakete ersetzen.
-\RequirePackage{tgheros}
-\RequirePackage{beramono}
-\RequirePackage{mathpazo}
+% XeLaTeX/LuaLaTeX: entsprechende OpenType-Schriften werden unten gesetzt.
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \RequirePackage{tgheros}
+  \RequirePackage{beramono}
+  \RequirePackage{mathpazo}
+\else % XeLaTeX/LuaLaTeX: OpenType equivalents of the pdfLaTeX fonts
+$if(mainfont)$
+$else$
+  \setmainfont{TeX Gyre Pagella}
+$endif$
+$if(sansfont)$
+$else$
+  \setsansfont{TeX Gyre Heros}
+$endif$
+$if(monofont)$
+$else$
+  \setmonofont{Latin Modern Mono}
+$endif$
+$if(mathfont)$
+$else$
+$if(mathspec)$
+$else$
+  \setmathfont{TeX Gyre Pagella Math}
+$endif$
+$endif$
+\fi
 
 %% HEADERS AND FOOTERS
 % Kopfzeile links:   Dokumenttitel  (\lhead)

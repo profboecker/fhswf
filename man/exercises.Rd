@@ -5,12 +5,14 @@
 \alias{render_exercises}
 \title{Exercise Sheets PDF Themes}
 \usage{
-exercises(...)
+exercises(..., latex_engine = "lualatex")
 
 render_exercises(...)
 }
 \arguments{
 \item{...}{divers parameters}
+
+\item{latex_engine}{A character variable defaulting to \dQuote{lualatex}.}
 }
 \description{
 Exercise Sheets PDF Themes

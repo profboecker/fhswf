@@ -53,8 +53,12 @@ $for(fontfamilies)$
   \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
 $endfor$
 
-% fix issue with this function
-\newcommand{\theHtable}{\thetable}
+% fix issue with this function (hyperref/beamer may already define it)
+\ifdefined\theHtable
+  \renewcommand{\theHtable}{\thetable}
+\else
+  \newcommand{\theHtable}{\thetable}
+\fi
 
 $if(euro)$
   \newcommand{\euro}{€}
@@ -164,19 +168,11 @@ $endif$
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 
-$if(lang)$
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+$if(babel-lang)$
   \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
   $if(babel-newcommands)$
     $babel-newcommands$
   $endif$
-\else
-  \usepackage{polyglossia}
-  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
-  $for(polyglossia-otherlangs)$
-    \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
-  $endfor$
-\fi
 $endif$
 
 \newif\ifbibliography

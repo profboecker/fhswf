@@ -36,3 +36,9 @@ test_that("sd_pop eines einzelnen Wertes gibt 0 zurück", {
 test_that("sd_pop gibt 0 zurück wenn nach na.rm nur ein Wert übrig bleibt", {
   expect_equal(sd_pop(c(42, NA, NA), na.rm = TRUE), 0)
 })
+
+test_that("PDF-Formate verwenden standardmäßig LuaLaTeX", {
+  expect_identical(formals(presentation)$latex_engine, "lualatex")
+  expect_identical(formals(seminarpaper)$latex_engine, "lualatex")
+  expect_identical(formals(exercises)$latex_engine, "lualatex")
+})

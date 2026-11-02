@@ -12,7 +12,10 @@ install_fhswf <- function(){
             "microtype","fp","pgf","babel-english","babel-german", "biblatex",
             "logreq","grffile","bera","fancyhdr","titlesec","palatino",
             "mathtools","eukdate","textpos","grfext","fpl","mathpazo","biber",
-            "colortbl", "wrapfig", "pdflscape", "xcolor", "multirow", "carlito")
+            "colortbl", "wrapfig", "pdflscape", "xcolor", "multirow", "carlito",
+            # LuaLaTeX: OpenType fonts and Unicode math
+            "fontspec", "unicode-math", "luaotfload", "tex-gyre",
+            "tex-gyre-math")
 
   # pkgs <- c(pkgs, "ifdraft") # Package not present in any (?) TexLive Repo
 
